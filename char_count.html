@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	<title>Character Counter of Input Field.</title>
+	<style type="text/css">
+		*
+		{
+			margin: 0;
+			padding: 0;
+			font-family: sans-serif;
+			background-color: lightgrey;
+		}
+		.container
+		{
+			width: 600px;
+			height: 500px;
+			padding: 20px;
+			border: 2px solid;
+			margin-top: 50px;
+			margin-left: 100px;
+		}
+		.container .heading
+		{
+			font-size: 30px;
+			color: red;
+			text-shadow: 2px 1px 1px black;
+		}
+		.container #text
+		{
+			width: 90%;
+			height: 70%;
+			padding: 10px;
+			font-size: 20px;
+		}
+		.container #char_count
+		{
+			color: red;
+			font-size: 50px;
+		}
+		.container button
+		{
+			background: dodgerblue;
+			padding: 10px;
+			font-size: 20px;
+			color: white;
+			border: 2px solid black;
+			float: right;
+		}
+	</style>
+</head>
+<body>
+	<center>
+	<div class="container">
+		<span class="heading">Character Counter using JavaScript</span>
+		<textarea id="text"  oninput="myfun()"></textarea>
+		<br><br>
+		<span class="result">You typed: <span class="result" id="char_count">0</span> Characters</span>
+		<button onclick="reset_fun()">Reset</button>
+	</div>
+	</center>
+	<script type="text/javascript">
+		var e = document.getElementById('text');
+		var c = document.getElementById('char_count');
+		function myfun(){	
+			c.innerHTML = e.value.length;
+		}
+		function reset_fun(){
+			e.value = "";
+			c.innerHTML = e.value.length;
+
+		}
+	</script>
+</body>
+</html>
